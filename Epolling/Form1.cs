@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Epolling
 {
@@ -15,6 +16,13 @@ namespace Epolling
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            // Fetch textbox value
+            string userId = IdTextBox.Text;
+
         }
     }
 }
