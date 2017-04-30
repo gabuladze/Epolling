@@ -42,6 +42,7 @@ namespace Epolling
             Form2 frm = new Form2();
             frm.Show();
             frm._nameTextbox = currentUser[1];
+            frm._surnameTextbox = currentUser[2];
         }
     }
 }
