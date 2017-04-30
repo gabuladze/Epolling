@@ -43,6 +43,8 @@ namespace Epolling
             frm.Show();
             frm._nameTextbox = currentUser[1];
             frm._surnameTextbox = currentUser[2];
+
+            Visible = false;
         }
     }
 }
