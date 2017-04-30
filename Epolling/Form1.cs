@@ -13,6 +13,8 @@ namespace Epolling
 {
     public partial class LoginForm : Form
     {
+        string[] currentUser = new string[3];
+
         public LoginForm()
         {
             InitializeComponent();
@@ -22,7 +24,24 @@ namespace Epolling
         {
             // Fetch textbox value
             string userId = IdTextBox.Text;
+            XmlDocument users = new XmlDocument();
+            users.Load("Users.xml");
 
+            foreach (XmlNode node in users.DocumentElement)
+            {
+                string id = node.Attributes[0].InnerText;
+                if (id == userId)
+                {
+                    currentUser[0] = id;
+                    currentUser[1] = node.Attributes[1].InnerText;
+                    currentUser[2] = node.Attributes[2].InnerText;
+                }
+            }
+
+            // show form2
+            Form2 frm = new Form2();
+            frm.Show();
+            frm._nameTextbox = currentUser[1];
         }
     }
 }
