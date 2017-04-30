@@ -1,8 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <user>
-    <id>11111111111</id>
-    <name>Giorgi</name>
-    <surname>Abuladze</surname>
-  </user>
+  <user id="11111111111" name="Giorgi" surname="Abuladze"></user>
 </root>
