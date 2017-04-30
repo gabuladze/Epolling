@@ -21,7 +21,7 @@ namespace Epolling
                 currentUser = value;
                 nameTextbox.Text = currentUser[1];
                 surnameTextbox.Text = currentUser[2];
-                IdTextbox.Text = currentUser[3];
+                IdTextbox.Text = currentUser[0];
             }
         }
 
