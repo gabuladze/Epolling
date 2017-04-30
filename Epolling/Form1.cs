@@ -24,21 +24,8 @@ namespace Epolling
         private void loginButton_Click(object sender, EventArgs e)
         {
             // Fetch textbox value
-            string userId = IdTextBox.Text;
+            currentUser = fetchUser(IdTextBox.Text);
             IdTextBox.Text = "";
-            XmlDocument users = new XmlDocument();
-            users.Load("Users.xml");
-
-            foreach (XmlNode node in users.DocumentElement)
-            {
-                string id = node.Attributes[0].InnerText;
-                if (id == userId)
-                {
-                    currentUser[0] = id;
-                    currentUser[1] = node.Attributes[1].InnerText;
-                    currentUser[2] = node.Attributes[2].InnerText;
-                }
-            }
 
             // show form2
             frm.Show();
@@ -53,6 +40,26 @@ namespace Epolling
         {
             Visible = true;
             Array.Clear(currentUser, 0, currentUser.Length);
+        }
+
+        private string[] fetchUser(string id)
+        {
+            string[] user = new string[4];
+            XmlDocument users = new XmlDocument();
+            users.Load("Users.xml");
+
+            foreach (XmlNode node in users.DocumentElement)
+            {
+                if (node.Attributes[0].InnerText == id)
+                {
+                    user[0] = id;
+                    user[1] = node.Attributes[1].InnerText;
+                    user[2] = node.Attributes[2].InnerText;
+                    user[3] = node.Attributes[3].InnerText;
+                }
+            }
+
+            return user;
         }
     }
 }
