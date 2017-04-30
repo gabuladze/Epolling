@@ -22,5 +22,11 @@ namespace Epolling
             get { return nameTextbox.Text; }
             set { nameTextbox.Text = value; }
         }
+
+        public string _surnameTextbox
+        {
+            get { return surnameTextbox.Text; }
+            set { surnameTextbox.Text = value; }
+        }
     }
 }
