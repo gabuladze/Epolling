@@ -13,6 +13,7 @@ namespace Epolling
 {
     public partial class LoginForm : Form
     {
+        Form2 frm = new Form2();
         string[] currentUser = new string[3];
 
         public LoginForm()
@@ -24,6 +25,7 @@ namespace Epolling
         {
             // Fetch textbox value
             string userId = IdTextBox.Text;
+            IdTextBox.Text = "";
             XmlDocument users = new XmlDocument();
             users.Load("Users.xml");
 
@@ -39,12 +41,18 @@ namespace Epolling
             }
 
             // show form2
-            Form2 frm = new Form2();
             frm.Show();
+            frm.FormClosed += frm_FormClosed;
             frm._nameTextbox = currentUser[1];
             frm._surnameTextbox = currentUser[2];
 
             Visible = false;
+        }
+
+        private void frm_FormClosed(object sender, EventArgs e)
+        {
+            Visible = true;
+            Array.Clear(currentUser, 0, currentUser.Length);
         }
     }
 }
