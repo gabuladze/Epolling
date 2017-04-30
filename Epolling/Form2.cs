@@ -16,5 +16,11 @@ namespace Epolling
         {
             InitializeComponent();
         }
+
+        public string _nameTextbox
+        {
+            get { return nameTextbox.Text; }
+            set { nameTextbox.Text = value; }
+        }
     }
 }
