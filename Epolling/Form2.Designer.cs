@@ -77,8 +77,11 @@
             this.Controls.Add(this.nameTextbox);
             this.Controls.Add(this.surnameLabel);
             this.Controls.Add(this.nameLabel);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.ShowIcon = false;
+            this.Text = "Epolling";
             this.ResumeLayout(false);
             this.PerformLayout();
 
