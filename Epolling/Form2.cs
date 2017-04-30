@@ -12,21 +12,21 @@ namespace Epolling
 {
     public partial class Form2 : Form
     {
+        string[] currentUser = new string[4];
+
+        public string[] _currentUser
+        {
+            get { return currentUser; }
+            set {
+                currentUser = value;
+                nameTextbox.Text = currentUser[1];
+                surnameTextbox.Text = currentUser[2];
+            }
+        }
+
         public Form2()
         {
             InitializeComponent();
-        }
-
-        public string _nameTextbox
-        {
-            get { return nameTextbox.Text; }
-            set { nameTextbox.Text = value; }
-        }
-
-        public string _surnameTextbox
-        {
-            get { return surnameTextbox.Text; }
-            set { surnameTextbox.Text = value; }
         }
     }
 }

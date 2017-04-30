@@ -14,7 +14,6 @@ namespace Epolling
     public partial class LoginForm : Form
     {
         Form2 frm = new Form2();
-        string[] currentUser = new string[3];
 
         public LoginForm()
         {
@@ -23,23 +22,18 @@ namespace Epolling
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            // Fetch textbox value
-            currentUser = fetchUser(IdTextBox.Text);
-            IdTextBox.Text = "";
-
             // show form2
-            frm.Show();
+            frm._currentUser = fetchUser(IdTextBox.Text);
             frm.FormClosed += frm_FormClosed;
-            frm._nameTextbox = currentUser[1];
-            frm._surnameTextbox = currentUser[2];
+            frm.Show();
 
+            IdTextBox.Text = "";
             Visible = false;
         }
 
         private void frm_FormClosed(object sender, EventArgs e)
         {
             Visible = true;
-            Array.Clear(currentUser, 0, currentUser.Length);
         }
 
         private string[] fetchUser(string id)
