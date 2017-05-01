@@ -30,6 +30,10 @@
         {
             this.candidatesListLabel = new System.Windows.Forms.Label();
             this.candidatesListBox = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.addCandidateLabel = new System.Windows.Forms.Label();
+            this.candidateNameTextbox = new System.Windows.Forms.Label();
+            this.addCandidateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // candidatesListLabel
@@ -49,11 +53,49 @@
             this.candidatesListBox.Size = new System.Drawing.Size(200, 342);
             this.candidatesListBox.TabIndex = 3;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(285, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
+            this.textBox1.TabIndex = 4;
+            // 
+            // addCandidateLabel
+            // 
+            this.addCandidateLabel.AutoSize = true;
+            this.addCandidateLabel.Location = new System.Drawing.Point(239, 50);
+            this.addCandidateLabel.Name = "addCandidateLabel";
+            this.addCandidateLabel.Size = new System.Drawing.Size(77, 13);
+            this.addCandidateLabel.TabIndex = 5;
+            this.addCandidateLabel.Text = "Add Candidate";
+            // 
+            // candidateNameTextbox
+            // 
+            this.candidateNameTextbox.AutoSize = true;
+            this.candidateNameTextbox.Location = new System.Drawing.Point(244, 85);
+            this.candidateNameTextbox.Name = "candidateNameTextbox";
+            this.candidateNameTextbox.Size = new System.Drawing.Size(35, 13);
+            this.candidateNameTextbox.TabIndex = 6;
+            this.candidateNameTextbox.Text = "Name";
+            // 
+            // addCandidateButton
+            // 
+            this.addCandidateButton.Location = new System.Drawing.Point(285, 109);
+            this.addCandidateButton.Name = "addCandidateButton";
+            this.addCandidateButton.Size = new System.Drawing.Size(75, 23);
+            this.addCandidateButton.TabIndex = 7;
+            this.addCandidateButton.Text = "Add";
+            this.addCandidateButton.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 427);
+            this.ClientSize = new System.Drawing.Size(439, 427);
+            this.Controls.Add(this.addCandidateButton);
+            this.Controls.Add(this.candidateNameTextbox);
+            this.Controls.Add(this.addCandidateLabel);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.candidatesListBox);
             this.Controls.Add(this.candidatesListLabel);
             this.Name = "SettingsForm";
@@ -68,5 +110,9 @@
 
         private System.Windows.Forms.Label candidatesListLabel;
         private System.Windows.Forms.ListBox candidatesListBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label addCandidateLabel;
+        private System.Windows.Forms.Label candidateNameTextbox;
+        private System.Windows.Forms.Button addCandidateButton;
     }
 }
