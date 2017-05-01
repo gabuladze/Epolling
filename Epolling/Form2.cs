@@ -29,5 +29,11 @@ namespace Epolling
         {
             InitializeComponent();
         }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm frm = new SettingsForm();
+            frm.Show();
+        }
     }
 }
