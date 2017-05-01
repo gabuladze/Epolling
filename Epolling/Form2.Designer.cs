@@ -34,6 +34,7 @@
             this.surnameTextbox = new System.Windows.Forms.TextBox();
             this.IdTextbox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
+            this.settingsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -87,11 +88,21 @@
             this.idLabel.TabIndex = 4;
             this.idLabel.Text = "ID";
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(13, 93);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(152, 21);
+            this.settingsButton.TabIndex = 6;
+            this.settingsButton.Text = "Settings";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 540);
+            this.ClientSize = new System.Drawing.Size(182, 540);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.IdTextbox);
             this.Controls.Add(this.idLabel);
             this.Controls.Add(this.surnameTextbox);
@@ -116,5 +127,6 @@
         private System.Windows.Forms.TextBox surnameTextbox;
         private System.Windows.Forms.TextBox IdTextbox;
         private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.Button settingsButton;
     }
 }
