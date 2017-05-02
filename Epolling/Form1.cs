@@ -13,7 +13,6 @@ namespace Epolling
 {
     public partial class LoginForm : Form
     {
-        Form2 frm = new Form2();
 
         public LoginForm()
         {
@@ -22,6 +21,7 @@ namespace Epolling
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            Form2 frm = new Form2();
             // show form2
             frm._currentUser = fetchUser(IdTextBox.Text);
             frm.FormClosed += frm_FormClosed;
