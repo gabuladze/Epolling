@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace Epolling
 {
@@ -27,21 +26,10 @@ namespace Epolling
             }
         }
 
-        private void LoadCandidates()
-        {
-            XmlDocument candidates = new XmlDocument();
-            candidates.Load("Candidates.xml");
-
-            foreach (XmlNode node in candidates.DocumentElement)
-            {
-                candidatesListBox.Items.Add(node.Attributes[1].InnerText);
-            }
-        }
-
         public Form2()
         {
             InitializeComponent();
-            LoadCandidates();
+            candidatesListBox.Items.Add(Candidates.Load());
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
