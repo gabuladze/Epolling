@@ -35,6 +35,8 @@
             this.IdTextbox = new System.Windows.Forms.TextBox();
             this.idLabel = new System.Windows.Forms.Label();
             this.settingsButton = new System.Windows.Forms.Button();
+            this.candidatesListBox = new System.Windows.Forms.CheckedListBox();
+            this.voteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -98,11 +100,30 @@
             this.settingsButton.UseVisualStyleBackColor = true;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
+            // candidatesListBox
+            // 
+            this.candidatesListBox.FormattingEnabled = true;
+            this.candidatesListBox.Location = new System.Drawing.Point(12, 129);
+            this.candidatesListBox.Name = "candidatesListBox";
+            this.candidatesListBox.Size = new System.Drawing.Size(154, 199);
+            this.candidatesListBox.TabIndex = 7;
+            // 
+            // voteButton
+            // 
+            this.voteButton.Location = new System.Drawing.Point(12, 333);
+            this.voteButton.Name = "voteButton";
+            this.voteButton.Size = new System.Drawing.Size(153, 23);
+            this.voteButton.TabIndex = 8;
+            this.voteButton.Text = "Submit Vote";
+            this.voteButton.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(182, 540);
+            this.ClientSize = new System.Drawing.Size(182, 368);
+            this.Controls.Add(this.voteButton);
+            this.Controls.Add(this.candidatesListBox);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.IdTextbox);
             this.Controls.Add(this.idLabel);
@@ -129,5 +150,7 @@
         private System.Windows.Forms.TextBox IdTextbox;
         private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.CheckedListBox candidatesListBox;
+        private System.Windows.Forms.Button voteButton;
     }
 }
