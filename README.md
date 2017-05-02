@@ -4,12 +4,12 @@ E-polling application (project for Introduction to Programming class)
 
 ## User stories
 
--- Users can see the list of the candidates *
--- Users can choose only one candidate *
--- Users can submit their vote *
+- Users can see the list of the candidates *
+- Users can choose only one candidate *
+- Users can submit their vote *
 
--- Administrator users can change the list of candidates *
--- Administrator users can see the results of elections *
+- Administrator users can change the list of candidates *
+- Administrator users can see the results of elections *
 
 *The users have to authenticate with their unique ID before committing any actions. Each user will have a role (Administrator or normal).
 
