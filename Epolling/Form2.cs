@@ -14,22 +14,22 @@ namespace Epolling
     {
         string[] currentUser = new string[4];
 
-
-        public string[] _currentUser
+        public Form2(string[] user)
         {
-            get { return currentUser; }
-            set {
-                currentUser = value;
-                nameTextbox.Text = currentUser[1];
-                surnameTextbox.Text = currentUser[2];
-                IdTextbox.Text = currentUser[0];
-            }
-        }
+            currentUser = user;
 
-        public Form2()
-        {
             InitializeComponent();
+
+            // Display user info
+            nameTextbox.Text = currentUser[1];
+            surnameTextbox.Text = currentUser[2];
+            IdTextbox.Text = currentUser[0];
+
+            // Load candidates
             candidatesListBox.DataSource = Candidates.Load();
+
+            // Hide or show the settings button
+            settingsButton.Visible = currentUser[3] == "admin" ? true : false;
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

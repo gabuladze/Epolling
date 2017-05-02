@@ -21,9 +21,8 @@ namespace Epolling
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            Form2 frm = new Form2();
+            Form2 frm = new Form2(fetchUser(IdTextBox.Text));
             // show form2
-            frm._currentUser = fetchUser(IdTextBox.Text);
             frm.FormClosed += frm_FormClosed;
             frm.Show();
 
