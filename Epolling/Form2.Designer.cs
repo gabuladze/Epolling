@@ -116,6 +116,7 @@
             this.voteButton.TabIndex = 8;
             this.voteButton.Text = "Submit Vote";
             this.voteButton.UseVisualStyleBackColor = true;
+            this.voteButton.Click += new System.EventHandler(this.voteButton_Click);
             // 
             // Form2
             // 

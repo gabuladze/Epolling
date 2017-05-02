@@ -29,13 +29,18 @@ namespace Epolling
         public Form2()
         {
             InitializeComponent();
-            candidatesListBox.Items.Add(Candidates.Load());
+            candidatesListBox.DataSource = Candidates.Load();
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
             SettingsForm frm = new SettingsForm();
             frm.Show();
+        }
+
+        private void voteButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(candidatesListBox.SelectedItem.ToString());
         }
     }
 }

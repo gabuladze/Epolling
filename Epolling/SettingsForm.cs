@@ -15,7 +15,7 @@ namespace Epolling
         public SettingsForm()
         {
             InitializeComponent();
-            candidatesListBox.Items.Add(Candidates.Load());
+            candidatesListBox.DataSource = Candidates.Load();
         }
     }
 }
