@@ -25,9 +25,6 @@ namespace Epolling
             surnameTextbox.Text = currentUser[2];
             IdTextbox.Text = currentUser[0];
 
-            // Load candidates
-            candidatesListBox.DataSource = Candidates.Load();
-
             // Hide or show the settings button
             settingsButton.Visible = currentUser[3] == "admin" ? true : false;
         }
