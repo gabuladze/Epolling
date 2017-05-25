@@ -31,6 +31,9 @@
             this.IdLabel = new System.Windows.Forms.Label();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.epollingDataSet1 = new Epolling.EpollingDataSet();
+            this.usersTableAdapter1 = new Epolling.EpollingDataSetTableAdapters.usersTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.epollingDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // IdLabel
@@ -59,6 +62,15 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
+            // epollingDataSet1
+            // 
+            this.epollingDataSet1.DataSetName = "EpollingDataSet";
+            this.epollingDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usersTableAdapter1
+            // 
+            this.usersTableAdapter1.ClearBeforeFill = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -72,6 +84,7 @@
             this.Name = "LoginForm";
             this.ShowIcon = false;
             this.Text = "Epolling - Log in";
+            ((System.ComponentModel.ISupportInitialize)(this.epollingDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -82,6 +95,8 @@
         private System.Windows.Forms.Label IdLabel;
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.Button loginButton;
+        private EpollingDataSet epollingDataSet1;
+        private EpollingDataSetTableAdapters.usersTableAdapter usersTableAdapter1;
     }
 }
 
