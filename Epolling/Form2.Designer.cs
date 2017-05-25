@@ -105,14 +105,14 @@
             this.candidatesListBox.FormattingEnabled = true;
             this.candidatesListBox.Location = new System.Drawing.Point(12, 129);
             this.candidatesListBox.Name = "candidatesListBox";
-            this.candidatesListBox.Size = new System.Drawing.Size(154, 199);
+            this.candidatesListBox.Size = new System.Drawing.Size(390, 199);
             this.candidatesListBox.TabIndex = 7;
             // 
             // voteButton
             // 
             this.voteButton.Location = new System.Drawing.Point(12, 333);
             this.voteButton.Name = "voteButton";
-            this.voteButton.Size = new System.Drawing.Size(153, 23);
+            this.voteButton.Size = new System.Drawing.Size(390, 23);
             this.voteButton.TabIndex = 8;
             this.voteButton.Text = "Submit Vote";
             this.voteButton.UseVisualStyleBackColor = true;
@@ -122,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(182, 368);
+            this.ClientSize = new System.Drawing.Size(414, 368);
             this.Controls.Add(this.voteButton);
             this.Controls.Add(this.candidatesListBox);
             this.Controls.Add(this.settingsButton);

@@ -46,7 +46,22 @@ namespace Epolling
 
                     ConnectToDB.Close();
                 }
+
+                SqlCommand cmd = new SqlCommand("SELECT c.id, concat(c.name, ', ', p.name) as name FROM candidates c JOIN parties p ON c.party_id = p.id", ConnectToDB);
+                DataSet candidatesDataSet = new DataSet();
+                candidatesDataSet.Tables.Add("candidates");
+                SqlDataAdapter candidatesDataAdapter = new SqlDataAdapter(cmd);
+
+                SqlCommandBuilder sqb = new SqlCommandBuilder(candidatesDataAdapter);
+
+                candidatesDataAdapter.Fill(candidatesDataSet, "candidates");
+                candidatesListBox.DataSource = candidatesDataSet.Tables["candidates"];
+
+                candidatesListBox.DisplayMember = "name";
+                candidatesListBox.ValueMember = "id";
             }
+
+
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
