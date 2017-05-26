@@ -28,91 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.candidatesListLabel = new System.Windows.Forms.Label();
-            this.candidatesListBox = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.addCandidateLabel = new System.Windows.Forms.Label();
-            this.candidateNameTextbox = new System.Windows.Forms.Label();
-            this.addCandidateButton = new System.Windows.Forms.Button();
+            this.candidatesTab = new System.Windows.Forms.TabPage();
+            this.partiesTab = new System.Windows.Forms.TabPage();
+            this.settingsTabControl = new System.Windows.Forms.TabControl();
+            this.settingsTab = new System.Windows.Forms.TabPage();
+            this.settingsTabControl.SuspendLayout();
             this.SuspendLayout();
             // 
-            // candidatesListLabel
+            // candidatesTab
             // 
-            this.candidatesListLabel.AutoSize = true;
-            this.candidatesListLabel.Location = new System.Drawing.Point(13, 13);
-            this.candidatesListLabel.Name = "candidatesListLabel";
-            this.candidatesListLabel.Size = new System.Drawing.Size(107, 13);
-            this.candidatesListLabel.TabIndex = 0;
-            this.candidatesListLabel.Text = "Edit list of candidates";
+            this.candidatesTab.Location = new System.Drawing.Point(4, 22);
+            this.candidatesTab.Name = "candidatesTab";
+            this.candidatesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.candidatesTab.Size = new System.Drawing.Size(431, 401);
+            this.candidatesTab.TabIndex = 1;
+            this.candidatesTab.Text = "Candidates";
+            this.candidatesTab.UseVisualStyleBackColor = true;
             // 
-            // candidatesListBox
+            // partiesTab
             // 
-            this.candidatesListBox.FormattingEnabled = true;
-            this.candidatesListBox.Location = new System.Drawing.Point(16, 50);
-            this.candidatesListBox.Name = "candidatesListBox";
-            this.candidatesListBox.Size = new System.Drawing.Size(200, 342);
-            this.candidatesListBox.TabIndex = 3;
+            this.partiesTab.Location = new System.Drawing.Point(4, 22);
+            this.partiesTab.Name = "partiesTab";
+            this.partiesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.partiesTab.Size = new System.Drawing.Size(431, 401);
+            this.partiesTab.TabIndex = 0;
+            this.partiesTab.Text = "Parties";
+            this.partiesTab.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // settingsTabControl
             // 
-            this.textBox1.Location = new System.Drawing.Point(285, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 4;
+            this.settingsTabControl.Controls.Add(this.partiesTab);
+            this.settingsTabControl.Controls.Add(this.candidatesTab);
+            this.settingsTabControl.Controls.Add(this.settingsTab);
+            this.settingsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsTabControl.Location = new System.Drawing.Point(0, 0);
+            this.settingsTabControl.Name = "settingsTabControl";
+            this.settingsTabControl.SelectedIndex = 0;
+            this.settingsTabControl.Size = new System.Drawing.Size(439, 427);
+            this.settingsTabControl.TabIndex = 0;
             // 
-            // addCandidateLabel
+            // settingsTab
             // 
-            this.addCandidateLabel.AutoSize = true;
-            this.addCandidateLabel.Location = new System.Drawing.Point(239, 50);
-            this.addCandidateLabel.Name = "addCandidateLabel";
-            this.addCandidateLabel.Size = new System.Drawing.Size(77, 13);
-            this.addCandidateLabel.TabIndex = 5;
-            this.addCandidateLabel.Text = "Add Candidate";
-            // 
-            // candidateNameTextbox
-            // 
-            this.candidateNameTextbox.AutoSize = true;
-            this.candidateNameTextbox.Location = new System.Drawing.Point(244, 85);
-            this.candidateNameTextbox.Name = "candidateNameTextbox";
-            this.candidateNameTextbox.Size = new System.Drawing.Size(35, 13);
-            this.candidateNameTextbox.TabIndex = 6;
-            this.candidateNameTextbox.Text = "Name";
-            // 
-            // addCandidateButton
-            // 
-            this.addCandidateButton.Location = new System.Drawing.Point(285, 109);
-            this.addCandidateButton.Name = "addCandidateButton";
-            this.addCandidateButton.Size = new System.Drawing.Size(75, 23);
-            this.addCandidateButton.TabIndex = 7;
-            this.addCandidateButton.Text = "Add";
-            this.addCandidateButton.UseVisualStyleBackColor = true;
+            this.settingsTab.Location = new System.Drawing.Point(4, 22);
+            this.settingsTab.Name = "settingsTab";
+            this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.settingsTab.Size = new System.Drawing.Size(431, 401);
+            this.settingsTab.TabIndex = 2;
+            this.settingsTab.Text = "Settings";
+            this.settingsTab.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(439, 427);
-            this.Controls.Add(this.addCandidateButton);
-            this.Controls.Add(this.candidateNameTextbox);
-            this.Controls.Add(this.addCandidateLabel);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.candidatesListBox);
-            this.Controls.Add(this.candidatesListLabel);
+            this.Controls.Add(this.settingsTabControl);
             this.Name = "SettingsForm";
             this.ShowIcon = false;
             this.Text = "SettingsForm";
+            this.settingsTabControl.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label candidatesListLabel;
-        private System.Windows.Forms.ListBox candidatesListBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label addCandidateLabel;
-        private System.Windows.Forms.Label candidateNameTextbox;
-        private System.Windows.Forms.Button addCandidateButton;
+        private System.Windows.Forms.TabPage candidatesTab;
+        private System.Windows.Forms.TabPage partiesTab;
+        private System.Windows.Forms.TabControl settingsTabControl;
+        private System.Windows.Forms.TabPage settingsTab;
     }
 }
