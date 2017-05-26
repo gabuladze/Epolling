@@ -43,11 +43,11 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.candidatesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.candidatesTableAdapter = new Epolling.EpollingDataSetTableAdapters.candidatesTableAdapter();
+            this.saveCandidatesButton = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.votesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveCandidatesButton = new System.Windows.Forms.Button();
+            this.partyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.candidatesTab.SuspendLayout();
             this.partiesTab.SuspendLayout();
             this.settingsTabControl.SuspendLayout();
@@ -178,6 +178,16 @@
             // 
             this.candidatesTableAdapter.ClearBeforeFill = true;
             // 
+            // saveCandidatesButton
+            // 
+            this.saveCandidatesButton.Location = new System.Drawing.Point(8, 361);
+            this.saveCandidatesButton.Name = "saveCandidatesButton";
+            this.saveCandidatesButton.Size = new System.Drawing.Size(75, 23);
+            this.saveCandidatesButton.TabIndex = 1;
+            this.saveCandidatesButton.Text = "Save";
+            this.saveCandidatesButton.UseVisualStyleBackColor = true;
+            this.saveCandidatesButton.Click += new System.EventHandler(this.saveCandidatesButton_Click);
+            // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -199,17 +209,13 @@
             // partyidDataGridViewTextBoxColumn
             // 
             this.partyidDataGridViewTextBoxColumn.DataPropertyName = "party_id";
+            this.partyidDataGridViewTextBoxColumn.DataSource = this.partiesBindingSource;
+            this.partyidDataGridViewTextBoxColumn.DisplayMember = "name";
             this.partyidDataGridViewTextBoxColumn.HeaderText = "party_id";
             this.partyidDataGridViewTextBoxColumn.Name = "partyidDataGridViewTextBoxColumn";
-            // 
-            // saveCandidatesButton
-            // 
-            this.saveCandidatesButton.Location = new System.Drawing.Point(8, 361);
-            this.saveCandidatesButton.Name = "saveCandidatesButton";
-            this.saveCandidatesButton.Size = new System.Drawing.Size(75, 23);
-            this.saveCandidatesButton.TabIndex = 1;
-            this.saveCandidatesButton.Text = "Save";
-            this.saveCandidatesButton.UseVisualStyleBackColor = true;
+            this.partyidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.partyidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.partyidDataGridViewTextBoxColumn.ValueMember = "Id";
             // 
             // SettingsForm
             // 
@@ -253,6 +259,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn votesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn partyidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn partyidDataGridViewTextBoxColumn;
     }
 }

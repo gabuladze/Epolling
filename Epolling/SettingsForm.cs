@@ -25,5 +25,12 @@ namespace Epolling
             this.partiesTableAdapter.Fill(this.epollingDataSet.parties);
 
         }
+
+        private void saveCandidatesButton_Click(object sender, EventArgs e)
+        {
+            candidatesBindingSource.EndEdit();
+            candidatesTableAdapter.Update(epollingDataSet.candidates);
+            MessageBox.Show("Candidates have been updated!");
+        }
     }
 }
