@@ -32,5 +32,12 @@ namespace Epolling
             candidatesTableAdapter.Update(epollingDataSet.candidates);
             MessageBox.Show("Candidates have been updated!");
         }
+
+        private void savePartiesButton_Click(object sender, EventArgs e)
+        {
+            partiesBindingSource.EndEdit();
+            partiesTableAdapter.Update(epollingDataSet.parties);
+            MessageBox.Show("Parties have been updated!");
+        }
     }
 }

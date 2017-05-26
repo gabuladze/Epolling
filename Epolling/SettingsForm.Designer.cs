@@ -152,6 +152,7 @@
             this.savePartiesButton.TabIndex = 1;
             this.savePartiesButton.Text = "Save";
             this.savePartiesButton.UseVisualStyleBackColor = true;
+            this.savePartiesButton.Click += new System.EventHandler(this.savePartiesButton_Click);
             // 
             // dataGridView2
             // 
