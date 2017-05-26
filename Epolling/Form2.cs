@@ -72,7 +72,32 @@ namespace Epolling
 
         private void voteButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(candidatesListBox.SelectedItem.ToString());
+            string candidateId = candidatesListBox.SelectedValue.ToString();
+
+            string constring = @"Data Source=THINKCENTRE\SQLEXPRESS;Initial Catalog=Epolling;Integrated Security=true";
+            using (SqlConnection ConnectToDB = new SqlConnection(constring))
+            {
+                using (SqlCommand DBCommand = new SqlCommand("UPDATE candidates SET votes = votes + 1 WHERE id = @CandidateId", ConnectToDB))
+                {
+                    DBCommand.Parameters.AddWithValue("@CandidateId", candidateId);
+
+                    ConnectToDB.Open();
+                    DBCommand.ExecuteNonQuery();
+                    ConnectToDB.Close();
+                }
+
+                using (SqlCommand DBCommand = new SqlCommand("UPDATE users SET voting_completed = 1 WHERE id = @CurrentUserId", ConnectToDB))
+                {
+                    DBCommand.Parameters.AddWithValue("@CurrentUserId", currentUserId);
+
+                    ConnectToDB.Open();
+                    DBCommand.ExecuteNonQuery();
+                    ConnectToDB.Close();
+                }
+            }
+
+            MessageBox.Show("Your vote has been submitted!");
+            this.Close();
         }
     }
 }
