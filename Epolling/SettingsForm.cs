@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Epolling
 {
     public partial class SettingsForm : Form
     {
+        string status = "";
         public SettingsForm()
         {
             InitializeComponent();
@@ -23,6 +25,27 @@ namespace Epolling
             this.candidatesTableAdapter.Fill(this.epollingDataSet.candidates);
             // TODO: This line of code loads data into the 'epollingDataSet.parties' table. You can move, or remove it, as needed.
             this.partiesTableAdapter.Fill(this.epollingDataSet.parties);
+
+            string constring = @"Data Source=THINKCENTRE\SQLEXPRESS;Initial Catalog=Epolling;Integrated Security=true";
+            using (SqlConnection ConnectToDB = new SqlConnection(constring))
+            {
+                using (SqlCommand DBCommand = new SqlCommand("SELECT value FROM settings WHERE name='status'", ConnectToDB))
+                {
+                    ConnectToDB.Open();
+
+                    using (SqlDataReader reader = DBCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            status = reader.GetString(reader.GetOrdinal("value"));
+                        }
+                    }
+
+                    ConnectToDB.Close();
+                }
+            }
+
+            electionStatus.Text = (status == "1") ? "Completed" : "Ongoing";
 
         }
 
@@ -38,6 +61,25 @@ namespace Epolling
             partiesBindingSource.EndEdit();
             partiesTableAdapter.Update(epollingDataSet.parties);
             MessageBox.Show("Parties have been updated!");
+        }
+
+        private void toggleElectionStatusButton_Click(object sender, EventArgs e)
+        {
+            string constring = @"Data Source=THINKCENTRE\SQLEXPRESS;Initial Catalog=Epolling;Integrated Security=true";
+            using (SqlConnection ConnectToDB = new SqlConnection(constring))
+            {
+                using (SqlCommand DBCommand = new SqlCommand("UPDATE settings SET value=@Value WHERE name='state'", ConnectToDB))
+                {
+                    string value = (status == "1") ? "0" : "1";
+                    DBCommand.Parameters.AddWithValue("@Value", value);
+
+                    ConnectToDB.Open();
+                    DBCommand.ExecuteNonQuery();
+                    ConnectToDB.Close();
+                }
+            }
+            electionStatus.Text = (status == "1") ? "Ongoing" : "Completed";
+            status = (status == "1") ? "0" : "1";
         }
     }
 }
