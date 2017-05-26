@@ -19,6 +19,8 @@ namespace Epolling
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'epollingDataSet.candidates' table. You can move, or remove it, as needed.
+            this.candidatesTableAdapter.Fill(this.epollingDataSet.candidates);
             // TODO: This line of code loads data into the 'epollingDataSet.parties' table. You can move, or remove it, as needed.
             this.partiesTableAdapter.Fill(this.epollingDataSet.parties);
 
