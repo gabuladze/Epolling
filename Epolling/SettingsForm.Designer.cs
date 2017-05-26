@@ -49,9 +49,13 @@
             this.votesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.resultsTab = new System.Windows.Forms.TabPage();
+            this.electionStatusLabel = new System.Windows.Forms.Label();
+            this.electionStatus = new System.Windows.Forms.Label();
+            this.toggleElectionStatusButton = new System.Windows.Forms.Button();
             this.candidatesTab.SuspendLayout();
             this.partiesTab.SuspendLayout();
             this.settingsTabControl.SuspendLayout();
+            this.settingsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epollingDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.partiesBindingSource)).BeginInit();
@@ -98,6 +102,9 @@
             // 
             // settingsTab
             // 
+            this.settingsTab.Controls.Add(this.toggleElectionStatusButton);
+            this.settingsTab.Controls.Add(this.electionStatus);
+            this.settingsTab.Controls.Add(this.electionStatusLabel);
             this.settingsTab.Location = new System.Drawing.Point(4, 22);
             this.settingsTab.Name = "settingsTab";
             this.settingsTab.Padding = new System.Windows.Forms.Padding(3);
@@ -230,6 +237,34 @@
             this.resultsTab.Text = "Results";
             this.resultsTab.UseVisualStyleBackColor = true;
             // 
+            // electionStatusLabel
+            // 
+            this.electionStatusLabel.AutoSize = true;
+            this.electionStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.electionStatusLabel.Location = new System.Drawing.Point(6, 18);
+            this.electionStatusLabel.Name = "electionStatusLabel";
+            this.electionStatusLabel.Size = new System.Drawing.Size(97, 13);
+            this.electionStatusLabel.TabIndex = 0;
+            this.electionStatusLabel.Text = "Election Status:";
+            // 
+            // electionStatus
+            // 
+            this.electionStatus.AutoSize = true;
+            this.electionStatus.Location = new System.Drawing.Point(109, 18);
+            this.electionStatus.Name = "electionStatus";
+            this.electionStatus.Size = new System.Drawing.Size(31, 13);
+            this.electionStatus.TabIndex = 1;
+            this.electionStatus.Text = "none";
+            // 
+            // toggleElectionStatusButton
+            // 
+            this.toggleElectionStatusButton.Location = new System.Drawing.Point(146, 13);
+            this.toggleElectionStatusButton.Name = "toggleElectionStatusButton";
+            this.toggleElectionStatusButton.Size = new System.Drawing.Size(75, 23);
+            this.toggleElectionStatusButton.TabIndex = 2;
+            this.toggleElectionStatusButton.Text = "Toggle Status";
+            this.toggleElectionStatusButton.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +278,8 @@
             this.candidatesTab.ResumeLayout(false);
             this.partiesTab.ResumeLayout(false);
             this.settingsTabControl.ResumeLayout(false);
+            this.settingsTab.ResumeLayout(false);
+            this.settingsTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epollingDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.partiesBindingSource)).EndInit();
@@ -274,5 +311,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn votesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn partyidDataGridViewTextBoxColumn;
         private System.Windows.Forms.TabPage resultsTab;
+        private System.Windows.Forms.Button toggleElectionStatusButton;
+        private System.Windows.Forms.Label electionStatus;
+        private System.Windows.Forms.Label electionStatusLabel;
     }
 }
