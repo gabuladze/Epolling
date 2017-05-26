@@ -48,6 +48,7 @@
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.votesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.partyidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.resultsTab = new System.Windows.Forms.TabPage();
             this.candidatesTab.SuspendLayout();
             this.partiesTab.SuspendLayout();
             this.settingsTabControl.SuspendLayout();
@@ -87,6 +88,7 @@
             this.settingsTabControl.Controls.Add(this.partiesTab);
             this.settingsTabControl.Controls.Add(this.candidatesTab);
             this.settingsTabControl.Controls.Add(this.settingsTab);
+            this.settingsTabControl.Controls.Add(this.resultsTab);
             this.settingsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.settingsTabControl.Location = new System.Drawing.Point(0, 0);
             this.settingsTabControl.Name = "settingsTabControl";
@@ -218,6 +220,16 @@
             this.partyidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.partyidDataGridViewTextBoxColumn.ValueMember = "Id";
             // 
+            // resultsTab
+            // 
+            this.resultsTab.Location = new System.Drawing.Point(4, 22);
+            this.resultsTab.Name = "resultsTab";
+            this.resultsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.resultsTab.Size = new System.Drawing.Size(431, 401);
+            this.resultsTab.TabIndex = 3;
+            this.resultsTab.Text = "Results";
+            this.resultsTab.UseVisualStyleBackColor = true;
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,5 +273,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn votesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn partyidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabPage resultsTab;
     }
 }
