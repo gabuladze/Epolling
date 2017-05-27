@@ -115,6 +115,8 @@
             // 
             // saveCandidatesButton
             // 
+            this.saveCandidatesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.saveCandidatesButton.Location = new System.Drawing.Point(435, 472);
             this.saveCandidatesButton.Name = "saveCandidatesButton";
             this.saveCandidatesButton.Size = new System.Drawing.Size(75, 23);
@@ -198,6 +200,8 @@
             // 
             // savePartiesButton
             // 
+            this.savePartiesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.savePartiesButton.Location = new System.Drawing.Point(437, 477);
             this.savePartiesButton.Name = "savePartiesButton";
             this.savePartiesButton.Size = new System.Drawing.Size(75, 23);
