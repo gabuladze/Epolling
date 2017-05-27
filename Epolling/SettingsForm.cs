@@ -21,6 +21,10 @@ namespace Epolling
 
         private void SettingsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'epollingDataSet1.users' table. You can move, or remove it, as needed.
+            this.usersTableAdapter.Fill(this.epollingDataSet1.users);
+            // TODO: This line of code loads data into the 'epollingDataSet1.user_roles' table. You can move, or remove it, as needed.
+            this.user_rolesTableAdapter.Fill(this.epollingDataSet1.user_roles);
             // TODO: This line of code loads data into the 'epollingDataSet.candidates' table. You can move, or remove it, as needed.
             this.candidatesTableAdapter.Fill(this.epollingDataSet.candidates);
             // TODO: This line of code loads data into the 'epollingDataSet.parties' table. You can move, or remove it, as needed.
@@ -80,6 +84,33 @@ namespace Epolling
             }
             electionStatus.Text = (status == "1") ? "Ongoing" : "Completed";
             status = (status == "1") ? "0" : "1";
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.candidatesTableAdapter.FillBy(this.epollingDataSet.candidates);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void saveUserRolesButton_Click(object sender, EventArgs e)
+        {
+            userrolesBindingSource.EndEdit();
+            user_rolesTableAdapter.Update(epollingDataSet.user_roles);
+            MessageBox.Show("User roles have been updated!");
+        }
+
+        private void saveUsersButton_Click(object sender, EventArgs e)
+        {
+            usersBindingSource.EndEdit();
+            usersTableAdapter.Update(epollingDataSet.users);
+            MessageBox.Show("Users have been updated!");
         }
     }
 }

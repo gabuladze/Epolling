@@ -63,7 +63,16 @@ SELECT Id, name, votes, party_id FROM candidates WHERE (Id = @Id)</CommandText>
               <Mapping SourceColumn="votes" DataSetColumn="votes" />
               <Mapping SourceColumn="party_id" DataSetColumn="party_id" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="EpollingConnectionString (Settings)" DbObjectName="Epolling.dbo.candidates" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, name, votes, party_id FROM dbo.candidates ORDER BY votes DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partiesTableAdapter" GeneratorDataComponentClassName="partiesTableAdapter" Name="parties" UserDataComponentName="partiesTableAdapter">
             <MainSource>
@@ -294,7 +303,7 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
   <xs:element name="EpollingDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EpollingDataSet" msprop:Generator_UserDSName="EpollingDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="candidates" msprop:Generator_TableClassName="candidatesDataTable" msprop:Generator_TableVarName="tablecandidates" msprop:Generator_TablePropName="candidates" msprop:Generator_RowDeletingName="candidatesRowDeleting" msprop:Generator_RowChangingName="candidatesRowChanging" msprop:Generator_RowEvHandlerName="candidatesRowChangeEventHandler" msprop:Generator_RowDeletedName="candidatesRowDeleted" msprop:Generator_UserTableName="candidates" msprop:Generator_RowChangedName="candidatesRowChanged" msprop:Generator_RowEvArgName="candidatesRowChangeEvent" msprop:Generator_RowClassName="candidatesRow">
+        <xs:element name="candidates" msprop:Generator_TableClassName="candidatesDataTable" msprop:Generator_TableVarName="tablecandidates" msprop:Generator_RowChangedName="candidatesRowChanged" msprop:Generator_TablePropName="candidates" msprop:Generator_RowDeletingName="candidatesRowDeleting" msprop:Generator_RowChangingName="candidatesRowChanging" msprop:Generator_RowEvHandlerName="candidatesRowChangeEventHandler" msprop:Generator_RowDeletedName="candidatesRowDeleted" msprop:Generator_RowClassName="candidatesRow" msprop:Generator_UserTableName="candidates" msprop:Generator_RowEvArgName="candidatesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -310,7 +319,7 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="parties" msprop:Generator_TableClassName="partiesDataTable" msprop:Generator_TableVarName="tableparties" msprop:Generator_TablePropName="parties" msprop:Generator_RowDeletingName="partiesRowDeleting" msprop:Generator_RowChangingName="partiesRowChanging" msprop:Generator_RowEvHandlerName="partiesRowChangeEventHandler" msprop:Generator_RowDeletedName="partiesRowDeleted" msprop:Generator_UserTableName="parties" msprop:Generator_RowChangedName="partiesRowChanged" msprop:Generator_RowEvArgName="partiesRowChangeEvent" msprop:Generator_RowClassName="partiesRow">
+        <xs:element name="parties" msprop:Generator_TableClassName="partiesDataTable" msprop:Generator_TableVarName="tableparties" msprop:Generator_RowChangedName="partiesRowChanged" msprop:Generator_TablePropName="parties" msprop:Generator_RowDeletingName="partiesRowDeleting" msprop:Generator_RowChangingName="partiesRowChanging" msprop:Generator_RowEvHandlerName="partiesRowChangeEventHandler" msprop:Generator_RowDeletedName="partiesRowDeleted" msprop:Generator_RowClassName="partiesRow" msprop:Generator_UserTableName="parties" msprop:Generator_RowEvArgName="partiesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -324,7 +333,7 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user_roles" msprop:Generator_TableClassName="user_rolesDataTable" msprop:Generator_TableVarName="tableuser_roles" msprop:Generator_TablePropName="user_roles" msprop:Generator_RowDeletingName="user_rolesRowDeleting" msprop:Generator_RowChangingName="user_rolesRowChanging" msprop:Generator_RowEvHandlerName="user_rolesRowChangeEventHandler" msprop:Generator_RowDeletedName="user_rolesRowDeleted" msprop:Generator_UserTableName="user_roles" msprop:Generator_RowChangedName="user_rolesRowChanged" msprop:Generator_RowEvArgName="user_rolesRowChangeEvent" msprop:Generator_RowClassName="user_rolesRow">
+        <xs:element name="user_roles" msprop:Generator_TableClassName="user_rolesDataTable" msprop:Generator_TableVarName="tableuser_roles" msprop:Generator_RowChangedName="user_rolesRowChanged" msprop:Generator_TablePropName="user_roles" msprop:Generator_RowDeletingName="user_rolesRowDeleting" msprop:Generator_RowChangingName="user_rolesRowChanging" msprop:Generator_RowEvHandlerName="user_rolesRowChangeEventHandler" msprop:Generator_RowDeletedName="user_rolesRowDeleted" msprop:Generator_RowClassName="user_rolesRow" msprop:Generator_UserTableName="user_roles" msprop:Generator_RowEvArgName="user_rolesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -345,7 +354,7 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -375,7 +384,7 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="settings" msprop:Generator_TableClassName="settingsDataTable" msprop:Generator_TableVarName="tablesettings" msprop:Generator_TablePropName="settings" msprop:Generator_RowDeletingName="settingsRowDeleting" msprop:Generator_RowChangingName="settingsRowChanging" msprop:Generator_RowEvHandlerName="settingsRowChangeEventHandler" msprop:Generator_RowDeletedName="settingsRowDeleted" msprop:Generator_UserTableName="settings" msprop:Generator_RowChangedName="settingsRowChanged" msprop:Generator_RowEvArgName="settingsRowChangeEvent" msprop:Generator_RowClassName="settingsRow">
+        <xs:element name="settings" msprop:Generator_TableClassName="settingsDataTable" msprop:Generator_TableVarName="tablesettings" msprop:Generator_RowChangedName="settingsRowChanged" msprop:Generator_TablePropName="settings" msprop:Generator_RowDeletingName="settingsRowDeleting" msprop:Generator_RowChangingName="settingsRowChanging" msprop:Generator_RowEvHandlerName="settingsRowChangeEventHandler" msprop:Generator_RowDeletedName="settingsRowDeleted" msprop:Generator_RowClassName="settingsRow" msprop:Generator_UserTableName="settings" msprop:Generator_RowEvArgName="settingsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -421,8 +430,8 @@ SELECT id, name, value FROM settings WHERE (id = @id)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_candidates_parties" msdata:parent="parties" msdata:child="candidates" msdata:parentkey="Id" msdata:childkey="party_id" msprop:Generator_UserChildTable="candidates" msprop:Generator_ChildPropName="GetcandidatesRows" msprop:Generator_UserRelationName="FK_candidates_parties" msprop:Generator_RelationVarName="relationFK_candidates_parties" msprop:Generator_UserParentTable="parties" msprop:Generator_ParentPropName="partiesRow" />
-      <msdata:Relationship name="FK_users_user_roles" msdata:parent="user_roles" msdata:child="users" msdata:parentkey="Id" msdata:childkey="role_id" msprop:Generator_UserChildTable="users" msprop:Generator_ChildPropName="GetusersRows" msprop:Generator_UserRelationName="FK_users_user_roles" msprop:Generator_ParentPropName="user_rolesRow" msprop:Generator_RelationVarName="relationFK_users_user_roles" msprop:Generator_UserParentTable="user_roles" />
+      <msdata:Relationship name="FK_candidates_parties" msdata:parent="parties" msdata:child="candidates" msdata:parentkey="Id" msdata:childkey="party_id" msprop:Generator_UserChildTable="candidates" msprop:Generator_ChildPropName="GetcandidatesRows" msprop:Generator_UserRelationName="FK_candidates_parties" msprop:Generator_ParentPropName="partiesRow" msprop:Generator_RelationVarName="relationFK_candidates_parties" msprop:Generator_UserParentTable="parties" />
+      <msdata:Relationship name="FK_users_user_roles" msdata:parent="user_roles" msdata:child="users" msdata:parentkey="Id" msdata:childkey="role_id" msprop:Generator_UserChildTable="users" msprop:Generator_ChildPropName="GetusersRows" msprop:Generator_UserRelationName="FK_users_user_roles" msprop:Generator_RelationVarName="relationFK_users_user_roles" msprop:Generator_UserParentTable="user_roles" msprop:Generator_ParentPropName="user_rolesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
