@@ -96,7 +96,7 @@ namespace Epolling
                 }
             }
 
-            MessageBox.Show("Your vote has been submitted!");
+            MessageBox.Show("Your vote has been submitted! You will be logged out from the system.");
             this.Close();
         }
     }
