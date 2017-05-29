@@ -92,30 +92,40 @@
             // 
             // settingsButton
             // 
-            this.settingsButton.Location = new System.Drawing.Point(13, 93);
+            this.settingsButton.BackColor = System.Drawing.Color.White;
+            this.settingsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.settingsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsButton.Location = new System.Drawing.Point(250, 64);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(152, 21);
             this.settingsButton.TabIndex = 6;
             this.settingsButton.Text = "Settings";
-            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.UseVisualStyleBackColor = false;
             this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // candidatesListBox
             // 
             this.candidatesListBox.FormattingEnabled = true;
-            this.candidatesListBox.Location = new System.Drawing.Point(12, 129);
+            this.candidatesListBox.Location = new System.Drawing.Point(12, 99);
             this.candidatesListBox.Name = "candidatesListBox";
-            this.candidatesListBox.Size = new System.Drawing.Size(390, 199);
+            this.candidatesListBox.Size = new System.Drawing.Size(390, 229);
             this.candidatesListBox.TabIndex = 7;
             // 
             // voteButton
             // 
+            this.voteButton.BackColor = System.Drawing.Color.White;
+            this.voteButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.voteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.voteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.voteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.voteButton.Location = new System.Drawing.Point(12, 333);
             this.voteButton.Name = "voteButton";
             this.voteButton.Size = new System.Drawing.Size(390, 23);
             this.voteButton.TabIndex = 8;
             this.voteButton.Text = "Submit Vote";
-            this.voteButton.UseVisualStyleBackColor = true;
+            this.voteButton.UseVisualStyleBackColor = false;
             this.voteButton.Click += new System.EventHandler(this.voteButton_Click);
             // 
             // Form2

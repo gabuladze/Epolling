@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.candidatesTab = new System.Windows.Forms.TabPage();
             this.saveCandidatesButton = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -117,12 +118,17 @@
             // 
             this.saveCandidatesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveCandidatesButton.BackColor = System.Drawing.Color.White;
+            this.saveCandidatesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveCandidatesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveCandidatesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveCandidatesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveCandidatesButton.Location = new System.Drawing.Point(435, 472);
             this.saveCandidatesButton.Name = "saveCandidatesButton";
             this.saveCandidatesButton.Size = new System.Drawing.Size(75, 23);
             this.saveCandidatesButton.TabIndex = 1;
             this.saveCandidatesButton.Text = "Save";
-            this.saveCandidatesButton.UseVisualStyleBackColor = true;
+            this.saveCandidatesButton.UseVisualStyleBackColor = false;
             this.saveCandidatesButton.Click += new System.EventHandler(this.saveCandidatesButton_Click);
             // 
             // dataGridView2
@@ -130,6 +136,8 @@
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -202,12 +210,17 @@
             // 
             this.savePartiesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.savePartiesButton.BackColor = System.Drawing.Color.White;
+            this.savePartiesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.savePartiesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.savePartiesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.savePartiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savePartiesButton.Location = new System.Drawing.Point(437, 477);
             this.savePartiesButton.Name = "savePartiesButton";
             this.savePartiesButton.Size = new System.Drawing.Size(75, 23);
             this.savePartiesButton.TabIndex = 1;
             this.savePartiesButton.Text = "Save";
-            this.savePartiesButton.UseVisualStyleBackColor = true;
+            this.savePartiesButton.UseVisualStyleBackColor = false;
             this.savePartiesButton.Click += new System.EventHandler(this.savePartiesButton_Click);
             // 
             // dataGridView1
@@ -215,11 +228,21 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.partiesBindingSource;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(512, 468);
@@ -244,6 +267,7 @@
             this.settingsTabControl.Controls.Add(this.settingsTab);
             this.settingsTabControl.Controls.Add(this.resultsTab);
             this.settingsTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settingsTabControl.HotTrack = true;
             this.settingsTabControl.Location = new System.Drawing.Point(0, 0);
             this.settingsTabControl.Name = "settingsTabControl";
             this.settingsTabControl.SelectedIndex = 0;
@@ -282,17 +306,23 @@
             // 
             this.saveUsersButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveUsersButton.BackColor = System.Drawing.Color.White;
+            this.saveUsersButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUsersButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUsersButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveUsersButton.Location = new System.Drawing.Point(420, 192);
             this.saveUsersButton.Name = "saveUsersButton";
             this.saveUsersButton.Size = new System.Drawing.Size(75, 23);
             this.saveUsersButton.TabIndex = 2;
             this.saveUsersButton.Text = "Save";
-            this.saveUsersButton.UseVisualStyleBackColor = true;
+            this.saveUsersButton.UseVisualStyleBackColor = false;
             this.saveUsersButton.Click += new System.EventHandler(this.saveUsersButton_Click);
             // 
             // dataGridView5
             // 
             this.dataGridView5.AutoGenerateColumns = false;
+            this.dataGridView5.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn3,
@@ -381,17 +411,24 @@
             // 
             this.saveUserRolesButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveUserRolesButton.BackColor = System.Drawing.Color.White;
+            this.saveUserRolesButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUserRolesButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUserRolesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(207)))), ((int)(((byte)(89)))));
+            this.saveUserRolesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveUserRolesButton.Location = new System.Drawing.Point(420, 190);
             this.saveUserRolesButton.Name = "saveUserRolesButton";
             this.saveUserRolesButton.Size = new System.Drawing.Size(75, 23);
             this.saveUserRolesButton.TabIndex = 1;
             this.saveUserRolesButton.Text = "Save";
-            this.saveUserRolesButton.UseVisualStyleBackColor = true;
+            this.saveUserRolesButton.UseVisualStyleBackColor = false;
             this.saveUserRolesButton.Click += new System.EventHandler(this.saveUserRolesButton_Click);
             // 
             // dataGridView4
             // 
             this.dataGridView4.AutoGenerateColumns = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn2,
@@ -424,12 +461,17 @@
             // 
             // toggleElectionStatusButton
             // 
+            this.toggleElectionStatusButton.BackColor = System.Drawing.Color.White;
+            this.toggleElectionStatusButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.toggleElectionStatusButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.toggleElectionStatusButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(119)))), ((int)(((byte)(207)))));
+            this.toggleElectionStatusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.toggleElectionStatusButton.Location = new System.Drawing.Point(197, 13);
             this.toggleElectionStatusButton.Name = "toggleElectionStatusButton";
             this.toggleElectionStatusButton.Size = new System.Drawing.Size(75, 23);
             this.toggleElectionStatusButton.TabIndex = 2;
             this.toggleElectionStatusButton.Text = "Toggle Status";
-            this.toggleElectionStatusButton.UseVisualStyleBackColor = true;
+            this.toggleElectionStatusButton.UseVisualStyleBackColor = false;
             this.toggleElectionStatusButton.Click += new System.EventHandler(this.toggleElectionStatusButton_Click);
             // 
             // electionStatus
@@ -465,11 +507,12 @@
             // 
             // fillByToolStrip
             // 
+            this.fillByToolStrip.BackColor = System.Drawing.Color.White;
             this.fillByToolStrip.Dock = System.Windows.Forms.DockStyle.None;
             this.fillByToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(5, 156);
+            this.fillByToolStrip.Location = new System.Drawing.Point(5, 473);
             this.fillByToolStrip.Name = "fillByToolStrip";
             this.fillByToolStrip.Size = new System.Drawing.Size(53, 25);
             this.fillByToolStrip.TabIndex = 2;
@@ -487,6 +530,7 @@
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn2,
@@ -497,7 +541,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(512, 150);
+            this.dataGridView3.Size = new System.Drawing.Size(512, 467);
             this.dataGridView3.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn2
